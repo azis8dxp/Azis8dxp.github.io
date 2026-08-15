@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aziz - Agent APS / SSIAP 1</title>
+    <title>Aziz - Agent de sécurité</title>
 
     <style>
         * {
@@ -14,120 +14,252 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #545454;
             min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, #46505d 0%, transparent 35%),
+                radial-gradient(circle at 80% 80%, #171b20 0%, transparent 40%),
+                #252a30;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 30px 18px;
+            color: #333;
         }
 
         .card {
-            background: white;
             width: 100%;
-            max-width: 500px;
-            padding: 50px 30px;
+            max-width: 520px;
+            padding: 55px 48px 48px;
+            border-radius: 25px;
             text-align: center;
-            border-radius: 18px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+
+            background-color: #fafafa;
+
+            /* Effet marbre */
+            background-image:
+                radial-gradient(ellipse at 20% 15%,
+                    rgba(255,255,255,0.9) 0%,
+                    rgba(255,255,255,0) 45%),
+                linear-gradient(125deg,
+                    transparent 0%,
+                    rgba(190,190,190,0.12) 20%,
+                    transparent 35%,
+                    rgba(180,180,180,0.10) 55%,
+                    transparent 70%),
+                linear-gradient(45deg,
+                    transparent 30%,
+                    rgba(160,160,160,0.08) 31%,
+                    transparent 33%,
+                    transparent 65%,
+                    rgba(160,160,160,0.08) 66%,
+                    transparent 68%),
+                #fafafa;
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.35),
+                0 5px 15px rgba(0,0,0,0.15);
         }
 
+        /* Logo */
         .logo {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 25px;
+            width: 92px;
+            height: 92px;
+            margin: 0 auto 35px;
+
             border-radius: 50%;
-            background: #545454;
-            color: white;
+
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 28px;
-            font-weight: bold;
+            align-items: center;
+
+            font-size: 48px;
+            font-weight: 300;
+            color: white;
+
+            background:
+                radial-gradient(circle at 35% 25%,
+                    #bfc4c8 0%,
+                    #777d82 20%,
+                    #353a3f 55%,
+                    #171a1d 100%);
+
+            border: 2px solid #9ca1a5;
+
+            box-shadow:
+                inset 0 2px 4px rgba(255,255,255,0.6),
+                inset 0 -4px 8px rgba(0,0,0,0.5),
+                0 4px 10px rgba(0,0,0,0.35);
         }
 
         h1 {
-            font-size: 36px;
-            letter-spacing: 2px;
+            font-size: 48px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: #333;
             margin-bottom: 10px;
-            color: #545454;
         }
 
         .job {
-            font-size: 17px;
-            color: #777;
-            margin-bottom: 35px;
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 55px;
         }
 
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .button {
-            display: block;
+            width: 100%;
+            min-height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            border-radius: 15px;
+
+            font-size: 23px;
+            font-weight: 600;
             text-decoration: none;
-            padding: 15px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: 0.2s;
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        /* Bouton CV */
         .cv {
-            background: #545454;
             color: white;
+
+            background:
+                linear-gradient(135deg,
+                    #666 0%,
+                    #4b4b4b 45%,
+                    #303030 100%);
+
+            border: 1px solid #292929;
+
+            box-shadow:
+                inset 0 1px 1px rgba(255,255,255,0.2),
+                0 4px 8px rgba(0,0,0,0.25);
         }
 
+        /* Bouton contact */
         .contact {
-            border: 2px solid #545454;
-            color: #545454;
-            background: white;
+            color: #333;
+            background: rgba(255,255,255,0.75);
+            border: 3px solid #555;
+
+            box-shadow:
+                0 3px 8px rgba(0,0,0,0.12);
         }
 
         .button:hover {
             transform: translateY(-2px);
-            opacity: 0.9;
         }
 
-        .footer {
-            margin-top: 30px;
-            font-size: 13px;
-            color: #999;
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .icon {
+            font-size: 27px;
+            line-height: 1;
+        }
+
+        /* Qualités */
+        .qualities {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 45px;
+        }
+
+        .quality {
+            background: rgba(225,228,232,0.85);
+            padding: 7px 11px;
+            border-radius: 9px;
+
+            font-size: 16px;
+            color: #333;
+
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+        }
+
+        /* Adaptation téléphone */
+        @media (max-width: 500px) {
+
+            body {
+                padding: 25px 15px;
+            }
+
+            .card {
+                padding: 55px 30px 45px;
+            }
+
+            .logo {
+                width: 88px;
+                height: 88px;
+                font-size: 45px;
+            }
+
+            h1 {
+                font-size: 43px;
+            }
+
+            .job {
+                font-size: 21px;
+                margin-bottom: 45px;
+            }
+
+            .button {
+                min-height: 72px;
+                font-size: 21px;
+            }
+
+            .quality {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="card">
+    <main class="card">
 
         <div class="logo">A</div>
 
         <h1>AZIZ</h1>
 
-        <p class="job">Agent APS / SSIAP 1</p>
+        <p class="job">Agent de sécurité</p>
 
         <div class="buttons">
 
             <a href="CV.pdf" target="_blank" class="button cv">
-                Voir mon CV
+                <span>Voir mon CV</span>
+                <span class="icon">▤</span>
             </a>
 
             <a href="tel:0612345678" class="button contact">
-                Me contacter
+                <span>Me contacter</span>
+                <span class="icon">✉</span>
             </a>
 
         </div>
 
-        <p class="footer">
-            Sérieux • Ponctuel • Motivé • Discret
-        </p>
+        <div class="qualities">
+            <span class="quality">Sérieux</span>
+            <span class="quality">Ponctuel</span>
+            <span class="quality">Motivé</span>
+            <span class="quality">Discret</span>
+        </div>
 
-    </div>
+    </main>
 
 </body>
 </html>
