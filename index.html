@@ -1,343 +1,356 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    <title>Aziz - Agent de sécurité</title>
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    padding: 35px 20px;
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
 
-    /* Fond sombre autour de la carte */
-    background:
-        radial-gradient(
-            circle at 20% 10%,
-            #46505a 0%,
-            #303841 35%,
-            transparent 65%
-        ),
-        linear-gradient(
-            135deg,
-            #343d46,
-            #191d21
-        );
+            padding: 50px 20px;
 
-    color: #303030;
-}
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
 
+            background:
+                radial-gradient(circle at top, #39414b 0%, #252b31 55%, #1d2227 100%);
 
-/* =========================
-   CARTE PRINCIPALE
-   ========================= */
+            color: #303030;
+        }
 
-.card {
-    width: 100%;
-    max-width: 560px;
+        /* CARTE PRINCIPALE */
+        .card {
+            width: 100%;
+            max-width: 520px;
 
-    padding: 75px 55px 55px;
+            padding: 70px 55px 65px;
 
-    border-radius: 28px;
+            border-radius: 32px;
 
-    /* VRAI FOND MARBRE */
-    background-image: url("marbre.jpg");
+            /* Texture marbre */
+            background-image:
+                url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85");
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
 
-    /* Ombre extérieure */
-    box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.38),
-        0 5px 15px rgba(0, 0, 0, 0.18);
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.30),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.8);
 
-    text-align: center;
-}
+            text-align: center;
+        }
 
+        /* AVATAR */
+        .avatar {
+            width: 125px;
+            height: 125px;
 
-/* =========================
-   AVATAR / LOGO A
-   ========================= */
+            margin: 0 auto 55px;
 
-.logo {
-    width: 125px;
-    height: 125px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    margin: 0 auto 65px;
+            border-radius: 50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            font-size: 64px;
+            font-weight: 300;
+            color: white;
 
-    border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle at 35% 25%,
+                    #f1f1f1 0%,
+                    #aeb4b8 12%,
+                    #737a7f 32%,
+                    #343a3f 68%,
+                    #15191c 100%
+                );
 
-    font-size: 68px;
-    font-weight: 300;
+            border: 3px solid #aeb3b6;
 
-    color: white;
+            box-shadow:
+                inset 0 3px 8px rgba(255,255,255,0.65),
+                inset 0 -8px 15px rgba(0,0,0,0.45),
+                0 10px 22px rgba(0,0,0,0.30);
 
-    /* Effet métal */
-    background:
-        linear-gradient(
-            145deg,
-            #d2d5d7 0%,
-            #858c91 18%,
-            #555c61 42%,
-            #24292d 72%,
-            #101417 100%
-        );
+            text-shadow:
+                0 2px 3px rgba(0,0,0,0.45);
+        }
 
-    border: 3px solid #a5aaad;
+        /* NOM */
+        h1 {
+            font-size: 58px;
+            font-weight: 800;
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
 
-    /* Effet 3D */
-    box-shadow:
-        inset 0 3px 7px rgba(255, 255, 255, 0.7),
-        inset 0 -8px 14px rgba(0, 0, 0, 0.5),
-        0 10px 20px rgba(0, 0, 0, 0.35);
-}
+            color: #303030;
+        }
 
+        /* MÉTIER */
+        .job {
+            font-size: 27px;
+            font-weight: 400;
 
-/* =========================
-   NOM
-   ========================= */
+            color: #686868;
 
-h1 {
-    color: #303030;
+            margin-bottom: 75px;
+        }
 
-    font-size: 58px;
-    font-weight: 800;
+        /* BOUTONS */
+        .button {
+            width: 100%;
+            min-height: 82px;
 
-    letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
 
-    margin-bottom: 18px;
-}
+            text-decoration: none;
 
+            font-size: 25px;
+            font-weight: 700;
 
-/* =========================
-   MÉTIER
-   ========================= */
+            border-radius: 18px;
 
-.subtitle {
-    color: #696969;
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+        }
 
-    font-size: 29px;
-    font-weight: 400;
+        .button:active {
+            transform: scale(0.98);
+        }
 
-    margin-bottom: 70px;
-}
+        /* BOUTON CV */
+        .cv-button {
+            color: white;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    #686868 0%,
+                    #4b4b4b 45%,
+                    #303030 100%
+                );
 
-/* =========================
-   CONTENEUR DES BOUTONS
-   ========================= */
+            border: 2px solid #292929;
 
-.buttons {
-    display: flex;
-    flex-direction: column;
+            box-shadow:
+                inset 0 1px 2px rgba(255,255,255,0.25),
+                inset 0 -2px 5px rgba(0,0,0,0.35),
+                0 8px 15px rgba(0,0,0,0.20);
 
-    gap: 28px;
-}
+            margin-bottom: 22px;
+        }
 
+        /* PETITE ICÔNE CV */
+        .cv-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
 
-/* =========================
-   BOUTONS
-   ========================= */
+        /* BOUTON CONTACT */
+        .contact-button {
+            color: #303030;
 
-.btn {
-    width: 100%;
-    min-height: 95px;
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #eeeeee 100%
+                );
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            border: 3px solid #5b5b5b;
 
-    gap: 16px;
+            box-shadow:
+                0 7px 15px rgba(0,0,0,0.12);
 
-    border-radius: 22px;
+            margin-bottom: 55px;
+        }
 
-    text-decoration: none;
+        /* ICÔNE CONTACT */
+        .contact-icon {
+            font-size: 28px;
+        }
 
-    font-size: 29px;
-    font-weight: 700;
+        /* BADGES */
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
+        .badge {
+            padding: 10px 16px;
 
+            border-radius: 13px;
 
-/* =========================
-   VOIR MON CV
-   ========================= */
+            background: rgba(225, 228, 232, 0.85);
 
-.cv {
-    color: white;
+            color: #303030;
 
-    /* Aspect sombre / cuir / asphalte */
-    background:
-        linear-gradient(
-            145deg,
-            #666666 0%,
-            #505050 35%,
-            #3b3b3b 100%
-        );
+            font-size: 17px;
+            font-weight: 400;
 
-    border: 2px solid #292929;
+            box-shadow:
+                0 4px 10px rgba(0,0,0,0.08);
 
-    box-shadow:
-        inset 0 1px 2px rgba(255,255,255,0.28),
-        inset 0 -5px 10px rgba(0,0,0,0.25),
-        0 7px 14px rgba(0,0,0,0.25);
-}
+            backdrop-filter: blur(4px);
+        }
 
+        /* VERSION TÉLÉPHONE */
+        @media (max-width: 600px) {
 
-/* =========================
-   ME CONTACTER
-   ========================= */
+            body {
+                padding: 35px 20px;
+            }
 
-.contact {
-    color: #303030;
+            .card {
+                max-width: 100%;
 
-    /* Blanc → gris très clair */
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff 0%,
-            #f8f8f8 50%,
-            #eeeeee 100%
-        );
+                padding: 70px 50px 65px;
 
-    border: 3px solid #595959;
+                border-radius: 30px;
+            }
 
-    box-shadow:
-        0 7px 14px rgba(0,0,0,0.16),
-        inset 0 1px 2px rgba(255,255,255,0.9);
-}
+            .avatar {
+                width: 120px;
+                height: 120px;
 
+                margin-bottom: 50px;
 
-/* =========================
-   ICÔNES
-   ========================= */
+                font-size: 60px;
+            }
 
-.icon {
-    font-size: 32px;
-    line-height: 1;
-}
+            h1 {
+                font-size: 48px;
+            }
 
+            .job {
+                font-size: 25px;
+                margin-bottom: 70px;
+            }
 
-/* =========================
-   TAGS
-   ========================= */
+            .button {
+                min-height: 78px;
+                font-size: 23px;
+            }
 
-.tags {
-    display: flex;
+            .badge {
+                font-size: 16px;
+                padding: 9px 14px;
+            }
+        }
 
-    justify-content: center;
-    align-items: center;
+        /* PETITS TÉLÉPHONES */
+        @media (max-width: 400px) {
 
-    flex-wrap: wrap;
+            body {
+                padding: 25px 15px;
+            }
 
-    gap: 14px;
+            .card {
+                padding: 55px 25px 50px;
+            }
 
-    margin-top: 60px;
-}
+            .avatar {
+                width: 110px;
+                height: 110px;
 
-.tag {
-    padding: 10px 18px;
+                font-size: 55px;
 
-    border-radius: 12px;
+                margin-bottom: 40px;
+            }
 
-    background: rgba(225, 228, 231, 0.85);
+            h1 {
+                font-size: 42px;
+            }
 
-    color: #303030;
+            .job {
+                font-size: 22px;
+                margin-bottom: 55px;
+            }
 
-    font-size: 19px;
-    font-weight: 400;
+            .button {
+                min-height: 72px;
+                font-size: 21px;
+            }
 
-    box-shadow:
-        0 4px 8px rgba(0,0,0,0.10);
-}
+            .badges {
+                gap: 8px;
+            }
 
+            .badge {
+                font-size: 15px;
+                padding: 8px 11px;
+            }
+        }
+    </style>
+</head>
 
-/* =========================
-   PETIT EFFET AU CLIC
-   ========================= */
+<body>
 
-.btn:hover {
-    transform: translateY(-2px);
+    <main class="card">
 
-    box-shadow:
-        0 10px 18px rgba(0,0,0,0.22);
-}
+        <!-- AVATAR -->
+        <div class="avatar">
+            A
+        </div>
 
-.btn:active {
-    transform: scale(0.98);
-}
+        <!-- NOM -->
+        <h1>AZIZ</h1>
 
+        <!-- MÉTIER -->
+        <p class="job">Agent de sécurité</p>
 
-/* =========================
-   TÉLÉPHONE
-   ========================= */
+        <!-- BOUTON CV -->
+        <a
+            href="CV.pdf"
+            target="_blank"
+            class="button cv-button"
+        >
+            <span>Voir mon CV</span>
+            <span class="cv-icon">▤</span>
+        </a>
 
-@media (max-width: 600px) {
+        <!-- BOUTON CONTACT -->
+        <a
+            href="tel:0612345678"
+            class="button contact-button"
+        >
+            <span>Me contacter</span>
+            <span class="contact-icon">✉</span>
+        </a>
 
-    body {
-        min-height: 100vh;
+        <!-- BADGES -->
+        <div class="badges">
 
-        align-items: flex-start;
+            <span class="badge">Sérieux</span>
+            <span class="badge">Ponctuel</span>
+            <span class="badge">Motivé</span>
+            <span class="badge">Discret</span>
 
-        padding: 110px 20px 50px;
-    }
+        </div>
 
-    .card {
-        width: 100%;
+    </main>
 
-        padding: 70px 50px 55px;
-
-        border-radius: 28px;
-    }
-
-    .logo {
-        width: 120px;
-        height: 120px;
-
-        font-size: 64px;
-
-        margin-bottom: 60px;
-    }
-
-    h1 {
-        font-size: 52px;
-    }
-
-    .subtitle {
-        font-size: 27px;
-
-        margin-bottom: 65px;
-    }
-
-    .btn {
-        min-height: 95px;
-
-        font-size: 27px;
-
-        border-radius: 22px;
-    }
-
-    .tags {
-        margin-top: 58px;
-
-        gap: 12px;
-    }
-
-    .tag {
-        font-size: 18px;
-
-        padding: 10px 16px;
-    }
-}
+</body>
+</html>
