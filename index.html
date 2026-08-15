@@ -18,63 +18,63 @@ display: flex;
 justify-content: center;
 align-items: center;
 padding: 20px;
-background: radial-gradient(circle at 50% 30%, #3a4048 0%, #181b1e 100%);
+background: #1e2227;
 color: #1a1a1a;
 }
 
-/* CARTE PRINCIPALE EN MARBRE BLANC */
+/* CARTE PRINCIPALE : EFFET MARBRE EN CODE PUR */
 .card {
 width: 100%;
 max-width: 440px;
 padding: 45px 30px;
 border-radius: 32px;
-/* Image de vrai marbre blanc fiable */
-background-color: #f5f5f7;
-background-image: url('https://raw.githubusercontent.com/azis8dxp/azis8dxp.github.io/main/marbre.jpg'),
-url('https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80'),
-linear-gradient(135deg, #fdfdfd 0%, #e2e2e2 100%);
-background-size: cover;
-background-position: center;
-box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+background-color: #f4f4f6;
+background-image:
+radial-gradient(at 20% 20%, rgba(200, 200, 205, 0.4) 0px, transparent 50%),
+radial-gradient(at 80% 0%, rgba(180, 180, 185, 0.35) 0px, transparent 50%),
+radial-gradient(at 0% 50%, rgba(210, 210, 215, 0.4) 0px, transparent 50%),
+radial-gradient(at 75% 75%, rgba(190, 190, 195, 0.35) 0px, transparent 50%),
+linear-gradient(135deg, #fdfdfd 0%, #e5e5eb 100%);
+box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 text-align: center;
 }
 
-/* AVATAR "A" METALLIQUE 3D */
+/* AVATAR A METALLIQUE */
 .avatar {
-width: 95px;
-height: 95px;
+width: 90px;
+height: 90px;
 margin: 0 auto 20px;
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: 45px;
+font-size: 42px;
 font-weight: 300;
 color: #ffffff;
-background: radial-gradient(circle at 35% 35%, #88929a 0%, #3e444b 70%, #25292e 100%);
-box-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.6),
-inset 0 -5px 10px rgba(0, 0, 0, 0.7),
-0 8px 18px rgba(0, 0, 0, 0.25);
-border: 2px solid #6b737b;
+background: radial-gradient(circle at 35% 35%, #7a838b 0%, #32373d 100%);
+box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.6),
+inset 0 -4px 8px rgba(0, 0, 0, 0.7),
+0 6px 12px rgba(0, 0, 0, 0.25);
+border: 2px solid #575e65;
 }
 
 /* TEXTES */
 h1 {
 font-size: 38px;
 font-weight: 800;
-letter-spacing: 2.5px;
-color: #1c1c1e;
+letter-spacing: 2px;
+color: #222222;
 margin-bottom: 4px;
 }
 
 .subtitle {
-font-size: 19px;
-color: #55555e;
+font-size: 18px;
+color: #666666;
 font-weight: 500;
 margin-bottom: 35px;
 }
 
-/* CONTENEUR BOUTONS */
+/* BOUTONS */
 .buttons {
 display: flex;
 flex-direction: column;
@@ -93,30 +93,25 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 10px;
-transition: transform 0.15s ease;
 }
 
-.btn:active {
-transform: scale(0.98);
-}
-
-/* BOUTON VOIR MON CV (SOMBRE TEXTURÉ) */
+/* BOUTON CV (SOMBRE) */
 .btn-cv {
 color: #ffffff;
-background: linear-gradient(180deg, #484d52 0%, #292c30 100%);
-border: 1px solid #1a1a1a;
-box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+background: linear-gradient(180deg, #454a4f 0%, #25282c 100%);
+border: 1px solid #111;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* BOUTON ME CONTACTER (BLANC) */
+/* BOUTON CONTACT (BLANC) */
 .btn-contact {
-color: #1c1c1e;
-background: linear-gradient(180deg, #ffffff 0%, #f4f4f6 100%);
-border: 2px solid #3a3a3c;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+color: #222222;
+background: #ffffff;
+border: 2px solid #333333;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* BADGES EN BAS */
+/* BADGES */
 .tags {
 display: flex;
 justify-content: center;
@@ -126,12 +121,11 @@ gap: 10px;
 
 .tag {
 padding: 8px 16px;
-border-radius: 12px;
-background: rgba(235, 235, 240, 0.75);
-border: 1px solid rgba(0, 0, 0, 0.06);
-font-size: 15px;
+border-radius: 10px;
+background: rgba(225, 225, 230, 0.7);
+font-size: 14px;
 font-weight: 600;
-color: #2c2c2e;
+color: #333333;
 }
 </style>
 </head>
