@@ -129,7 +129,36 @@
     
     <!-- Logo vectoriel bouclier + cadenas identique à ta photo -->
     <div class="logo-securite">
-      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#5a626a" />
+        <stop offset="50%" stop-color="#32373d" />
+        <stop offset="100%" stop-color="#1d2024" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Bouclier Externe avec la pointe haut aiguisée en V -->
+    <path d="M 50 10 L 88 32 V 68 C 88 95, 50 114, 50 114 C 50 114, 12 95, 12 68 V 32 Z" 
+          fill="none" stroke="url(#metalGrad)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+    
+    <!-- Bouclier Interne -->
+    <path d="M 50 22 L 78 40 V 66 C 78 87, 50 102, 50 102 C 50 102, 22 87, 22 66 V 40 Z" 
+          fill="none" stroke="url(#metalGrad)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    
+    <!-- Corps du Cadenas -->
+    <rect x="38" y="60" width="24" height="20" rx="4" 
+          fill="none" stroke="url(#metalGrad)" stroke-width="4"/>
+    
+    <!-- Anse du Cadenas -->
+    <path d="M 43 60 V 51 C 43 45, 57 45, 57 51 V 60" 
+          fill="none" stroke="url(#metalGrad)" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Coche (validé) -->
+    <path d="M 44 70 L 49 74 L 56 65" 
+          fill="none" stroke="url(#metalGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
         <!-- Dégradé métallique sombre -->
         <defs>
           <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
