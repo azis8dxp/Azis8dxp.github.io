@@ -165,13 +165,28 @@
     <p class="subtitle"></p>
 
     <div class="buttons">
-      <a href="#" class="btn btn-cv">
+      <!-- Lien vers ton CV -->
+      <a href="cv.pdf" target="_blank" class="btn btn-cv">
         Voir mon CV 📄
       </a>
-      <a href="#" class="btn btn-contact">
+
+      <!-- Bouton Contact qui propose le choix -->
+      <a href="#" onclick="choixContact(event)" class="btn btn-contact">
         Me contacter ✉️
       </a>
     </div>
+
+    <script>
+      function choixContact(e) {
+        e.preventDefault();
+        const choix = confirm("Clique sur OK pour appeler, ou Annuler pour envoyer un e-mail.");
+        if (choix) {
+          window.location.href = "tel:0600000000"; // <-- Met ton numéro ici
+        } else {
+          window.location.href = "mailto:tonmail@gmail.com"; // <-- Met ton mail ici
+        }
+      }
+    </script>
 
     <div class="tags">
       <span class="tag">Sérieux</span>
